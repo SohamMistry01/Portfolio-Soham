@@ -68,6 +68,8 @@ export default function Portfolio() {
               <span className="text-foreground/60">AI/ML Engineer</span>
               <span className="text-primary/80 mx-3">·</span>
               <span className="text-foreground/60">GenAI Systems Builder</span>
+              <span className="text-primary/80 mx-3">·</span>
+              <span className="text-foreground/60">Python Developer</span>
             </h2>
           </motion.div>
 
@@ -78,7 +80,7 @@ export default function Portfolio() {
             transition={{ delay: 0.2, duration: 0.7 }}
             className="text-lg md:text-xl max-w-3xl leading-[1.75] text-muted-foreground font-light"
           >
-            Computer Engineering graduate and Software &amp; AI Engineer focused on building production-ready AI systems and intelligent applications. My experience spans Python, Django, FastAPI, machine learning, LLMs, RAG, and agentic AI, with hands-on work across backend architecture, AI workflows, APIs and full-stack products. I enjoy turning emerging AI capabilities into reliable software that solves meaningful real-world problems and continuously expanding my expertise through hands-on engineering.
+            Computer Engineering graduate and Software &amp; AI Engineer focused on building production-ready AI systems and intelligent applications. My experience spans Python, Django, FastAPI, machine learning, LLMs, RAG and agentic AI, with hands-on work across backend architecture, AI workflows, APIs and full-stack products. I enjoy turning emerging AI capabilities into reliable software that solves meaningful real-world problems and continuously expanding my expertise through hands-on engineering.
           </motion.p>
 
           {/* CTA buttons */}
@@ -258,7 +260,16 @@ export default function Portfolio() {
                               <Cpu className="w-4 h-4 text-primary" /> Multi-Agent Orchestration (LangGraph)
                             </h5>
                             <p className="text-base leading-[1.8] text-muted-foreground font-light">
-                              The core reasoning engine leverages LangGraph to create stateful, cyclical agent workflows. For the <strong className="text-foreground font-medium">Research Agent</strong>, I designed a multi-step <em className="text-foreground/80">Search → Scrape → Summarize</em> pipeline that autonomously browses the web using the Tavily API, parses HTML content, and synthesizes findings. The <strong className="text-foreground font-medium">Notes Assistant</strong> utilizes a Map-Reduce fan-out architecture, processing multiple large documents (PDF/DOCX/TXT) in parallel across independent agent nodes. The <strong className="text-foreground font-medium">Career Planner</strong> implements a web-augmented pipeline with graceful fallbacks, ensuring robust responses even when external APIs fail.
+                              The core reasoning engine leverages LangGraph to create stateful, cyclical agent workflows.
+                            </p>
+                            <p className="text-base leading-[1.8] text-muted-foreground font-light">
+                              For the <strong className="text-foreground font-medium">Research Agent</strong>, I designed a multi-step <em className="text-foreground/80"> Search → Scrape → Summarize </em> pipeline that autonomously browses the web using the Tavily API, parses HTML content, and synthesizes findings.
+                            </p>
+                            <p className="text-base leading-[1.8] text-muted-foreground font-light">
+                              The <strong className="text-foreground font-medium">Notes Assistant</strong> utilizes a Map-Reduce fan-out architecture, processing multiple large documents (PDF/DOCX/TXT) in parallel across independent agent nodes.
+                            </p>
+                            <p className="text-base leading-[1.8] text-muted-foreground font-light">
+                              The <strong className="text-foreground font-medium">Career Planner</strong> implements a web-augmented pipeline with graceful fallbacks, ensuring robust responses even when external APIs fail.
                             </p>
                           </div>
 
