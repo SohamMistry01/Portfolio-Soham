@@ -28,8 +28,8 @@ export default function Portfolio() {
       </div>
 
       {/* ── Navigation ──────────────────────────────────────── */}
-      <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
-        <div className="flex items-center gap-1 px-2 py-2 bg-background/60 backdrop-blur-lg border border-border/40 rounded-full shadow-lg shadow-black/20">
+      <nav className="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-auto max-w-[400px] sm:max-w-none">
+        <div className="flex items-center justify-between sm:justify-center gap-0.5 sm:gap-1 px-2 sm:px-2 py-1.5 sm:py-2 bg-background/60 backdrop-blur-lg border border-border/40 rounded-full shadow-lg shadow-black/20 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {[
             { name: "About", href: "#about" },
             { name: "Skills", href: "#skills" },
@@ -40,7 +40,7 @@ export default function Portfolio() {
             <a
               key={item.name}
               href={item.href}
-              className="px-4 py-1.5 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-full transition-all"
+              className="px-3 sm:px-4 py-1.5 text-[13px] sm:text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-full transition-all whitespace-nowrap"
             >
               {item.name}
             </a>
