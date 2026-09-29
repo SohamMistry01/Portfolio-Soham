@@ -233,6 +233,7 @@ export default function Portfolio() {
                     <Badge variant="secondary" className="bg-primary/12 text-primary border-primary/20 text-sm px-3 py-1">Django</Badge>
                     <Badge variant="secondary" className="bg-primary/12 text-primary border-primary/20 text-sm px-3 py-1">LangGraph</Badge>
                     <Badge variant="secondary" className="bg-primary/12 text-primary border-primary/20 text-sm px-3 py-1">RAG</Badge>
+                    <Badge variant="secondary" className="bg-primary/12 text-primary border-primary/20 text-sm px-3 py-1">IEEE Published</Badge>
                   </div>
                 </div>
               </CardHeader>
@@ -311,6 +312,36 @@ export default function Portfolio() {
                             <p className="font-[family-name:var(--font-mono)] text-sm text-foreground/60 leading-relaxed">
                               Client → Django Router → Rate Limiter → Controller → LangGraph Agent ⇌ (Groq · Tavily · GitHub) → Usage Logger → Response / PDF
                             </p>
+                          </div>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+
+                    <AccordionItem value="research" className="border-t border-border/30">
+                      <AccordionTrigger className={`${headingFont} text-primary hover:no-underline font-semibold px-2 py-5 text-base tracking-wide`}>
+                        IEEE Research Publication
+                      </AccordionTrigger>
+                      <AccordionContent className="space-y-6 px-2 pb-6">
+                        <div className="space-y-6">
+                          <p className="text-base leading-[1.8] text-muted-foreground font-light">
+                            <strong className="text-foreground font-medium">Abstract:</strong> In this fast paced world, where every opportunity comes with a challenge, we try to balance our workload, set life goals, balance mental health and learn new skills, it can feel like we are on our own, struggling to make sense of all the information coming over us. This is where JeevanYaan comes in, an AI native platform that combines the best of human guidance with the power of technology by bringing together large language models, smart agentic architectures and machine learning practices. JeevanYaan is a robust, personalized system for career growth and overall development, it helps you understand your mental health, plan your career, and even do research for you. We present how JeevanYaan’s secure and user-friendly platform can make expert-level guidance available to everyone, helping people navigate their careers and personal lives with more confidence, clarity, and direction.
+                          </p>
+                          <div className="space-y-4">
+                            <div className="flex flex-wrap items-start gap-4">
+                              <a href="https://ieeexplore.ieee.org/document/11581803" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-primary/10 text-primary rounded-xl text-sm font-semibold hover:bg-primary/20 transition-all border border-primary/20 hover:-translate-y-0.5">
+                                <FileText className="w-4 h-4" /> View on IEEE Xplore
+                              </a>
+                              <details className="group">
+                                <summary className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-border/60 bg-card/30 hover:bg-muted/40 rounded-xl text-sm font-medium transition-all cursor-pointer list-none text-foreground select-none hover:-translate-y-0.5">
+                                  Cite This
+                                </summary>
+                                <div className="mt-4 p-5 rounded-xl border border-primary/15 bg-primary/5 shadow-inner">
+                                  <p className="font-[family-name:var(--font-mono)] text-sm text-foreground/80 leading-relaxed selection:bg-primary/30">
+                                    S. Mistry, V. More, A. Pedgulwar and M. Nerkar, "JeevanYaan - An AI Powered Career and Wellness Companion," 2026 2nd International Conference on Computing, Communication and Green Engineering (CCGE), Pune, India, 2026, pp. 1-6, doi: 10.1109/CCGE67142.2026.11581803.
+                                  </p>
+                                </div>
+                              </details>
+                            </div>
                           </div>
                         </div>
                       </AccordionContent>
