@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Soham Mistry — AI/ML Engineer",
+  title: "Soham Mistry - AI/ML Engineer",
   description:
     "Portfolio of Soham Mistry, AI/ML Engineer and GenAI Systems Builder. Specialising in agentic RAG pipelines, LLMs, and full-stack AI platforms.",
 };
