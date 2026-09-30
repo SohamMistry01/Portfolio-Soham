@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Mail, Code2, Cpu, Blocks, ArrowRight, FileText, Database } from "lucide-react";
+import { Mail, Code2, Cpu, Blocks, ArrowRight, FileText, Database, GraduationCap } from "lucide-react";
 
 const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" /><path d="M9 18c-4.51 2-5-2-7-2" /></svg>
@@ -34,6 +34,7 @@ export default function Portfolio() {
             { name: "About", href: "#about" },
             { name: "Skills", href: "#skills" },
             { name: "Experience", href: "#experience" },
+            { name: "Education", href: "#education" },
             { name: "Projects", href: "#projects" },
             { name: "Contact", href: "#contact" },
           ].map((item) => (
@@ -202,6 +203,60 @@ export default function Portfolio() {
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Education ───────────────────────────────────── */}
+        <section id="education" className="space-y-10 scroll-mt-32">
+          <div className="flex items-center gap-4">
+            <div className="p-2.5 bg-primary/10 rounded-xl border border-primary/20">
+              <GraduationCap className="w-6 h-6 text-primary" />
+            </div>
+            <h3 className={`${headingFont} text-4xl font-semibold tracking-tight`}>Education</h3>
+          </div>
+
+          <div className="border-l-2 border-border/40 ml-4 pl-10 space-y-12 relative">
+            <div className="absolute w-3.5 h-3.5 bg-background border-2 border-primary rounded-full -left-[8px] top-2 shadow-sm shadow-primary/30" />
+            <div className="space-y-5 group">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-3">
+                <h4 className={`${headingFont} text-2xl md:text-3xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors duration-200`}>
+                  BTech in Computer Engineering
+                </h4>
+                <span className="text-sm font-medium text-primary bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full w-fit shrink-0">
+                  Oct 2022 – May 2026
+                </span>
+              </div>
+              
+              <div className="flex flex-col gap-1">
+                <p className="text-lg font-medium text-foreground/70 flex items-center gap-2.5">
+                  Savitribai Phule Pune University
+                </p>
+                <p className="text-base text-muted-foreground font-medium flex items-center gap-2">
+                  CGPA: <span className="text-foreground/80">8.44</span>
+                </p>
+              </div>
+
+              <div className="space-y-3 pt-2">
+                <h5 className={`${headingFont} text-lg font-medium text-foreground`}>Leadership &amp; Volunteering</h5>
+                <ul className="space-y-3 text-base text-muted-foreground leading-[1.6] font-light">
+                  <li className="relative before:content-[''] before:absolute before:-left-6 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-primary/60 before:rounded-full">
+                    <strong className="text-foreground/80 font-medium">Technical Executive of CESA</strong> (Computer Engineering Student Association) : Sep 2023 – Aug 2024
+                  </li>
+                  <li className="relative before:content-[''] before:absolute before:-left-6 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-primary/60 before:rounded-full">
+                    <strong className="text-foreground/80 font-medium">Technical Secretary of CESA</strong> : Sep 2024 – Aug 2025
+                  </li>
+                  <li className="relative before:content-[''] before:absolute before:-left-6 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-primary/60 before:rounded-full">
+                    <strong className="text-foreground/80 font-medium">Administrator of CESA</strong> : Sep 2025 – May 2026
+                  </li>
+                  <li className="relative before:content-[''] before:absolute before:-left-6 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-primary/60 before:rounded-full">
+                    <strong className="text-foreground/80 font-medium">Club Lead of CodeHub</strong> (Coding Club) : Aug 2024 – July 2025
+                  </li>
+                  <li className="relative before:content-[''] before:absolute before:-left-6 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-primary/60 before:rounded-full">
+                    <strong className="text-foreground/80 font-medium">Club Advisor of CodeHub</strong> : Aug 2025 – May 2026
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
