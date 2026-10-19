@@ -39,8 +39,8 @@ export function Projects() {
                 <CardDescription className="text-lg text-muted-foreground/80">AI-Powered Career &amp; Wellness Companion</CardDescription>
               </div>
               <div className="flex flex-wrap gap-2 shrink-0">
-                <Badge variant="secondary" className="bg-primary/12 text-primary border-primary/20 text-sm px-3 py-1">Django</Badge>
-                <Badge variant="secondary" className="bg-primary/12 text-primary border-primary/20 text-sm px-3 py-1">LangGraph</Badge>
+                <Badge variant="secondary" className="bg-primary/12 text-primary border-primary/20 text-sm px-3 py-1">Ensemble Model</Badge>
+                <Badge variant="secondary" className="bg-primary/12 text-primary border-primary/20 text-sm px-3 py-1">LangChain</Badge>
                 <Badge variant="secondary" className="bg-primary/12 text-primary border-primary/20 text-sm px-3 py-1">RAG</Badge>
                 <Badge variant="secondary" className="bg-primary/12 text-primary border-primary/20 text-sm px-3 py-1">IEEE Published</Badge>
               </div>
@@ -160,7 +160,120 @@ export function Projects() {
           </CardContent>
         </Card>
 
-        {/* Project 2 — Health Insurance */}
+        {/* Project 2 — PyChamp */}
+        <Card className="group overflow-hidden border-border/40 bg-card/40 backdrop-blur-sm hover:border-primary/40 hover:bg-card/60 transition-all duration-500 shadow-sm hover:shadow-lg hover:shadow-primary/5">
+          <CardHeader className="space-y-5 px-8 pt-8 pb-4">
+            <div className="flex flex-col sm:flex-row justify-between sm:items-start gap-5">
+              <div className="space-y-2">
+                <CardTitle className={`${headingFont} text-3xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors duration-200 flex items-center gap-3`}>
+                  PyChamp
+                  <a href="https://github.com/SohamMistry01/PyChamp" target="_blank" rel="noreferrer" className="text-muted-foreground/60 hover:text-primary transition-colors" title="View on GitHub">
+                    <GithubIcon className="w-6 h-6" />
+                  </a>
+                </CardTitle>
+                <CardDescription className="text-lg text-muted-foreground/80">AI DSA Learning Platform &amp; In-Browser Python IDE</CardDescription>
+              </div>
+              <div className="flex flex-wrap gap-2 shrink-0">
+                <Badge variant="secondary" className="bg-primary/12 text-primary border-primary/20 text-sm px-3 py-1">Django</Badge>
+                <Badge variant="secondary" className="bg-primary/12 text-primary border-primary/20 text-sm px-3 py-1">LangGraph</Badge>
+                <Badge variant="secondary" className="bg-primary/12 text-primary border-primary/20 text-sm px-3 py-1">Groq LPU</Badge>
+                <Badge variant="secondary" className="bg-primary/12 text-primary border-primary/20 text-sm px-3 py-1">Multi-Agent AI</Badge>
+              </div>
+            </div>
+          </CardHeader>
+
+          <CardContent className="space-y-6 px-8 pb-8">
+            <p className="text-lg text-muted-foreground leading-[1.8] font-light">
+              Architected an AI-native Data Structures &amp; Algorithms learning platform and integrated browser Python IDE.
+              Orchestrated a concurrent <span className="text-foreground/80 font-medium">3-agent LangGraph pipeline</span> powered by Groq&apos;s high-speed LPU inference with a guided progressive unlock flow, paired with a sandboxed code execution engine and zero-token offline study notes library.
+            </p>
+
+            <div className="bg-muted/20 rounded-xl px-3 border border-border/30">
+              <Accordion className="w-full">
+                <AccordionItem value="architecture" className="border-none">
+                  <AccordionTrigger className={`${headingFont} text-primary hover:no-underline font-semibold px-2 py-5 text-base tracking-wide`}>
+                    View Architecture &amp; Technical Details
+                  </AccordionTrigger>
+                  <AccordionContent className="space-y-6 px-2 pb-6">
+                    <div className="space-y-6">
+                      <p className="text-base leading-[1.8] text-muted-foreground font-light">
+                        PyChamp is a developer ecosystem engineered to accelerate algorithmic problem-solving and Python proficiency. It couples parallel multi-agent reasoning graphs with an isolated code execution environment and a local Markdown study library.
+                      </p>
+
+                      <div className="space-y-3">
+                        <h5 className={`${headingFont} text-foreground font-semibold flex items-center gap-2 text-base`}>
+                          <Cpu className="w-4 h-4 text-primary" /> Concurrent Multi-Agent Engine (LangGraph &amp; Groq)
+                        </h5>
+                        <p className="text-base leading-[1.8] text-muted-foreground font-light">
+                          Upon receiving any algorithmic topic or problem (e.g., Merge Sort, LRU Cache, Dijkstra&apos;s Algorithm), PyChamp launches three parallel specialist agents orchestrated through a stateful LangGraph pipeline:
+                        </p>
+                        <ul className="list-none space-y-2.5 text-base font-light text-muted-foreground">
+                          {[
+                            ["Theory Agent (gpt-oss-20b):", "Generates foundational concepts, intuitive real-world analogies, step-by-step mechanics, and asymptotic Time & Space complexity analysis without spoiler code."],
+                            ["Pseudocode Agent (qwen3.8-27b):", "Synthesizes clean, structured, language-agnostic logic and algorithmic blueprints."],
+                            ["Code Agent (gpt-oss-120b):", "Produces idiomatic, production-ready Python solutions with helper functions, line-by-line annotations, and edge-case handling."],
+                          ].map(([title, desc]) => (
+                            <li key={title} className="flex gap-2">
+                              <span className="text-primary mt-0.5 shrink-0">→</span>
+                              <span><strong className="text-foreground/90 font-medium">{title}</strong> {desc}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="space-y-3">
+                        <h5 className={`${headingFont} text-foreground font-semibold flex items-center gap-2 text-base`}>
+                          <Blocks className="w-4 h-4 text-primary" /> Guided Pedagogical Flow &amp; Error Diagnostics
+                        </h5>
+                        <p className="text-base leading-[1.8] text-muted-foreground font-light">
+                          To reinforce active recall over passive reading, the tutor enforces a progressive step-by-step unlock pipeline: <span className="text-foreground/80 font-medium">Theory First → Pseudocode Blueprint → Python Implementation</span>. Formatted with Marked.js for real-time Markdown rendering with syntax highlighting and complexity tables, accompanied by an interactive error inspector with expandable diagnostic stack trace drawers.
+                        </p>
+                      </div>
+
+                      <div className="space-y-3">
+                        <h5 className={`${headingFont} text-foreground font-semibold flex items-center gap-2 text-base`}>
+                          <Code2 className="w-4 h-4 text-primary" /> In-Browser IDE &amp; Sandboxed Execution
+                        </h5>
+                        <p className="text-base leading-[1.8] text-muted-foreground font-light">
+                          Engineered a lightweight dark-themed Python editor with line numbering, hotkey execution (<kbd className="px-1.5 py-0.5 rounded bg-muted text-xs font-mono border border-border/50 text-foreground/80">Ctrl + Enter</kbd>), and dual console streams separating stdout from exception tracebacks. Subprocess execution runs in isolated temporary files backed by a strict <span className="text-foreground/80 font-medium">5-second timeout guard</span> to prevent infinite loops and resource starvation.
+                        </p>
+                      </div>
+
+                      <div className="space-y-3">
+                        <h5 className={`${headingFont} text-foreground font-semibold flex items-center gap-2 text-base`}>
+                          <Database className="w-4 h-4 text-primary" /> Offline Notes Library &amp; Platform Architecture
+                        </h5>
+                        <p className="text-base leading-[1.8] text-muted-foreground font-light">Engineered with production-minded modularity and security:</p>
+                        <ul className="list-none space-y-2.5 text-base font-light text-muted-foreground">
+                          {[
+                            ["Zero-Token Offline Library:", "One-click archiving of lessons into structured local Markdown files (theory.md, pseudocode.md, code.md) under per-user directories for offline review without recurring API consumption."],
+                            ["Multi-Tenant Key Isolation:", "Per-user Groq API key configuration with regex validation, masked storage (gsk_...xxxx), and administrator-level environment fallback."],
+                            ["Automated Quality Assurance:", "Backed by 23 passing Django automated unit tests covering multi-agent state merge, auth boundaries, path-traversal sanitization, and open-redirect defenses."],
+                          ].map(([title, desc]) => (
+                            <li key={title} className="flex gap-2">
+                              <span className="text-primary mt-0.5 shrink-0">→</span>
+                              <span><strong className="text-foreground/90 font-medium">{title}</strong> {desc}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Architecture flow */}
+                      <div className="mt-2 p-5 rounded-xl border border-primary/15 bg-primary/5">
+                        <p className={`${headingFont} text-primary font-semibold mb-3 text-xs uppercase tracking-widest`}>Pipeline Flow</p>
+                        <p className="font-[family-name:var(--font-mono)] text-sm text-foreground/60 leading-relaxed">
+                          User DSA Topic → LangGraph Parallel Fan-Out (Theory · Pseudocode · Code via Groq) → Synchronized State Merge → Progressive UI / Local Markdown Storage
+                        </p>
+                      </div>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Project 3 — Health Insurance */}
         <Card className="group overflow-hidden border-border/40 bg-card/40 backdrop-blur-sm hover:border-primary/40 hover:bg-card/60 transition-all duration-500 shadow-sm hover:shadow-lg hover:shadow-primary/5">
           <CardHeader className="space-y-5 px-8 pt-8 pb-4">
             <div className="flex flex-col sm:flex-row justify-between sm:items-start gap-5">
