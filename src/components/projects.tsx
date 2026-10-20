@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Code2, Cpu, Blocks, FileText, Database, ExternalLink } from "lucide-react";
+import { Code2, Cpu, Blocks, FileText, Database, ExternalLink, Images } from "lucide-react";
+import { ProjectGalleryModal } from "@/components/project-gallery-modal";
 
 const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" /><path d="M9 18c-4.51 2-5-2-7-2" /></svg>
@@ -11,7 +13,17 @@ const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 const headingFont = "[font-family:var(--font-heading)]";
 
+const jeevanyaanScreenshots = [
+  { src: "/projects/jeevanyaan/img1.png", title: "AI-Powered Career & Wellness Dashboard" },
+  { src: "/projects/jeevanyaan/img2.png", title: "LangGraph Multi-Agent Reasoning Pipeline" },
+  { src: "/projects/jeevanyaan/img3.png", title: "CatBoost Ensemble Mental Health Predictor" },
+  { src: "/projects/jeevanyaan/img4.png", title: "RAG-Driven Resume Scanner & Match Analyzer" },
+  { src: "/projects/jeevanyaan/img5.png", title: "Map-Reduce Parallel Notes Generation" },
+];
+
 export function Projects() {
+  const [jeevanyaanGalleryOpen, setJeevanyaanGalleryOpen] = useState(false);
+
   return (
     <section id="projects" className="space-y-10 scroll-mt-32">
       <div className="flex items-center gap-4">
@@ -27,14 +39,26 @@ export function Projects() {
           <CardHeader className="space-y-5 px-8 pt-8 pb-4">
             <div className="flex flex-col sm:flex-row justify-between sm:items-start gap-5">
               <div className="space-y-2">
-                <CardTitle className={`${headingFont} text-3xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors duration-200 flex items-center gap-3`}>
-                  JeevanYaan
-                  <a href="https://github.com/SohamMistry01/JeevanYaan" target="_blank" rel="noreferrer" className="text-muted-foreground/60 hover:text-primary transition-colors" title="View on GitHub">
-                    <GithubIcon className="w-6 h-6" />
-                  </a>
-                  <a href="https://jeevanyaan.onrender.com/" target="_blank" rel="noreferrer" className="text-muted-foreground/60 hover:text-primary transition-colors" title="View Live Website">
-                    <ExternalLink className="w-6 h-6" />
-                  </a>
+                <CardTitle className={`${headingFont} text-3xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors duration-200 flex flex-wrap items-center gap-3`}>
+                  <span>JeevanYaan</span>
+                  <div className="flex items-center gap-2">
+                    <a href="https://github.com/SohamMistry01/JeevanYaan" target="_blank" rel="noreferrer" className="text-muted-foreground/60 hover:text-primary transition-colors" title="View on GitHub">
+                      <GithubIcon className="w-6 h-6" />
+                    </a>
+                    <a href="https://jeevanyaan.onrender.com/" target="_blank" rel="noreferrer" className="text-muted-foreground/60 hover:text-primary transition-colors" title="View Live Website">
+                      <ExternalLink className="w-6 h-6" />
+                    </a>
+                    <button
+                      type="button"
+                      onClick={() => setJeevanyaanGalleryOpen(true)}
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-primary bg-primary/10 hover:bg-primary/20 border border-primary/25 hover:border-primary/40 px-3 py-1 rounded-full transition-all hover:scale-105 active:scale-95 cursor-pointer shadow-sm ml-1"
+                      title="View Project Screenshots"
+                    >
+                      <Images className="w-3.5 h-3.5" />
+                      <span>Screenshots</span>
+                      <span className="text-[10px] bg-primary/20 text-primary px-1.5 py-0.2 rounded-full font-semibold">5</span>
+                    </button>
+                  </div>
                 </CardTitle>
                 <CardDescription className="text-lg text-muted-foreground/80">AI-Powered Career &amp; Wellness Companion</CardDescription>
               </div>
@@ -52,6 +76,23 @@ export function Projects() {
               Built a full-stack GenAI platform with 8 AI modules for career guidance and wellness, aligned with SDG-3 &amp; SDG-4.
               Trained a CatBoost classifier on 12 lifestyle features for mental health prediction <span className="text-foreground/80 font-medium">(96% F1-score)</span>, paired with an LLM expert-review chain for actionable insights.
             </p>
+
+            {/* Screenshots trigger banner */}
+            <div className="flex items-center">
+              <button
+                type="button"
+                onClick={() => setJeevanyaanGalleryOpen(true)}
+                className="group inline-flex items-center gap-2.5 text-sm font-medium text-foreground/90 bg-card/60 hover:bg-card border border-border/60 hover:border-primary/40 px-4 py-2.5 rounded-xl transition-all hover:scale-[1.01] active:scale-[0.99] cursor-pointer shadow-sm"
+              >
+                <div className="p-1 rounded-md bg-primary/10 text-primary border border-primary/20 group-hover:bg-primary/20 transition-colors">
+                  <Images className="w-4 h-4" />
+                </div>
+                <span>View Project Screenshots &amp; Glimpse</span>
+                <span className="text-xs bg-primary/15 text-primary border border-primary/20 px-2 py-0.5 rounded-full font-semibold">
+                  5 Screenshots
+                </span>
+              </button>
+            </div>
 
             <div className="bg-muted/20 rounded-xl px-3 border border-border/30">
               <Accordion className="w-full">
@@ -359,6 +400,14 @@ export function Projects() {
           </CardContent>
         </Card>
       </div>
+
+      {/* JeevanYaan Screenshots Modal */}
+      <ProjectGalleryModal
+        isOpen={jeevanyaanGalleryOpen}
+        onClose={() => setJeevanyaanGalleryOpen(false)}
+        projectName="JeevanYaan"
+        images={jeevanyaanScreenshots}
+      />
     </section>
   );
 }
