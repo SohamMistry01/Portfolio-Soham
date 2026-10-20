@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Cpu, Blocks, ArrowRight, FileText, GraduationCap } from "lucide-react";
+import { Mail, Cpu, Blocks, ArrowRight, FileText, GraduationCap, Users, Terminal } from "lucide-react";
 import { Projects } from "@/components/projects";
 
 const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -224,10 +224,10 @@ export default function Portfolio() {
                   BTech in Computer Engineering
                 </h4>
                 <span className="text-sm font-medium text-primary bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full w-fit shrink-0">
-                  Oct 2022 – May 2026
+                  Oct 2022 - May 2026
                 </span>
               </div>
-              
+
               <div className="flex flex-col gap-1">
                 <p className="text-lg font-medium text-foreground/70 flex items-center gap-2.5">
                   Savitribai Phule Pune University
@@ -237,25 +237,133 @@ export default function Portfolio() {
                 </p>
               </div>
 
-              <div className="space-y-3 pt-2">
-                <h5 className={`${headingFont} text-lg font-medium text-foreground`}>Leadership &amp; Volunteering</h5>
-                <ul className="space-y-3 text-base text-muted-foreground leading-[1.6] font-light">
-                  <li className="relative before:content-[''] before:absolute before:-left-6 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-primary/60 before:rounded-full">
-                    <strong className="text-foreground/80 font-medium">Technical Executive of CESA</strong> (Computer Engineering Student Association) : Sep 2023 – Aug 2024
-                  </li>
-                  <li className="relative before:content-[''] before:absolute before:-left-6 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-primary/60 before:rounded-full">
-                    <strong className="text-foreground/80 font-medium">Technical Secretary of CESA</strong> : Sep 2024 – Aug 2025
-                  </li>
-                  <li className="relative before:content-[''] before:absolute before:-left-6 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-primary/60 before:rounded-full">
-                    <strong className="text-foreground/80 font-medium">Administrator of CESA</strong> : Sep 2025 – May 2026
-                  </li>
-                  <li className="relative before:content-[''] before:absolute before:-left-6 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-primary/60 before:rounded-full">
-                    <strong className="text-foreground/80 font-medium">Club Lead of CodeHub</strong> (Coding Club) : Aug 2024 – July 2025
-                  </li>
-                  <li className="relative before:content-[''] before:absolute before:-left-6 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-primary/60 before:rounded-full">
-                    <strong className="text-foreground/80 font-medium">Club Advisor of CodeHub</strong> : Aug 2025 – May 2026
-                  </li>
-                </ul>
+              {/* Coursework */}
+              <div className="space-y-3 pt-1">
+                <h5 className={`${headingFont} text-lg font-medium text-foreground`}>
+                  Relevant Coursework
+                </h5>
+                <div className="flex flex-wrap gap-2 pt-0.5">
+                  {[
+                    "Data Structures & Algorithms",
+                    "Artificial Intelligence & Machine Learning",
+                    "Deep Learning",
+                    "Natural Language Processing",
+                    "Data Science",
+                    "Data Analysis",
+                    "Database Management System",
+                    "Operating System",
+                    "Computer Networks",
+                    "Object Oriented Programming",
+                    "Theory of Computation",
+                    "Computational Statistics",
+                    "Discrete Mathematics",
+                    "Programming & Problem Solving",
+                  ].map((course) => (
+                    <Badge
+                      key={course}
+                      variant="secondary"
+                      className="h-auto py-1.5 px-3 text-xs sm:text-sm font-normal text-muted-foreground bg-card/50 border border-border/50 hover:border-primary/40 hover:text-foreground hover:bg-primary/5 transition-all rounded-lg"
+                    >
+                      {course}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-4 pt-3">
+                <h5 className={`${headingFont} text-lg font-medium text-foreground`}>
+                  Leadership &amp; Volunteering
+                </h5>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
+                  {/* CESA */}
+                  <div className="rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm p-5 space-y-4 hover:border-primary/30 hover:bg-card/60 transition-all duration-300">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex items-center gap-3">
+                        <div className="p-2 rounded-xl bg-primary/10 text-primary border border-primary/20 shrink-0">
+                          <Users className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <h6 className="font-semibold text-foreground text-base tracking-tight leading-snug">
+                            CESA
+                          </h6>
+                          <p className="text-xs text-muted-foreground">
+                            Computer Engineering Student Association
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[11px] font-medium text-primary bg-primary/10 border border-primary/20 px-2.5 py-0.5 rounded-full shrink-0">
+                        3-Yr Tenure
+                      </span>
+                    </div>
+
+                    <div className="relative pl-5 space-y-3.5 before:content-[''] before:absolute before:left-[7px] before:top-2 before:bottom-2 before:w-px before:bg-border/60">
+                      <div className="relative">
+                        <div className="absolute -left-[17px] top-1.5 w-2 h-2 rounded-full bg-primary ring-4 ring-background" />
+                        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-0.5">
+                          <span className="text-sm font-medium text-foreground">Administrator</span>
+                          <span className="text-xs text-muted-foreground/80 font-light">Sep 2025 – May 2026</span>
+                        </div>
+                      </div>
+
+                      <div className="relative">
+                        <div className="absolute -left-[17px] top-1.5 w-2 h-2 rounded-full bg-primary/70 ring-4 ring-background" />
+                        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-0.5">
+                          <span className="text-sm font-medium text-foreground/90">Technical Secretary</span>
+                          <span className="text-xs text-muted-foreground/80 font-light">Sep 2024 – Aug 2025</span>
+                        </div>
+                      </div>
+
+                      <div className="relative">
+                        <div className="absolute -left-[17px] top-1.5 w-2 h-2 rounded-full bg-primary/40 ring-4 ring-background" />
+                        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-0.5">
+                          <span className="text-sm font-medium text-foreground/80">Technical Executive</span>
+                          <span className="text-xs text-muted-foreground/80 font-light">Sep 2023 – Aug 2024</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CodeHub */}
+                  <div className="rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm p-5 space-y-4 hover:border-primary/30 hover:bg-card/60 transition-all duration-300">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex items-center gap-3">
+                        <div className="p-2 rounded-xl bg-primary/10 text-primary border border-primary/20 shrink-0">
+                          <Terminal className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <h6 className="font-semibold text-foreground text-base tracking-tight leading-snug">
+                            CodeHub
+                          </h6>
+                          <p className="text-xs text-muted-foreground">
+                            Official Department Coding Club
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-[11px] font-medium text-primary bg-primary/10 border border-primary/20 px-2.5 py-0.5 rounded-full shrink-0">
+                        Coding Club
+                      </span>
+                    </div>
+
+                    <div className="relative pl-5 space-y-3.5 before:content-[''] before:absolute before:left-[7px] before:top-2 before:bottom-2 before:w-px before:bg-border/60">
+                      <div className="relative">
+                        <div className="absolute -left-[17px] top-1.5 w-2 h-2 rounded-full bg-primary ring-4 ring-background" />
+                        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-0.5">
+                          <span className="text-sm font-medium text-foreground">Club Advisor</span>
+                          <span className="text-xs text-muted-foreground/80 font-light">Aug 2025 – May 2026</span>
+                        </div>
+                      </div>
+
+                      <div className="relative">
+                        <div className="absolute -left-[17px] top-1.5 w-2 h-2 rounded-full bg-primary/60 ring-4 ring-background" />
+                        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-0.5">
+                          <span className="text-sm font-medium text-foreground/90">Club Lead</span>
+                          <span className="text-xs text-muted-foreground/80 font-light">Aug 2024 – July 2025</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
