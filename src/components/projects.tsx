@@ -14,26 +14,36 @@ const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
 const headingFont = "[font-family:var(--font-heading)]";
 
 const jeevanyaanScreenshots = [
-  { src: "/projects/jeevanyaan/img1.png", title: "AI-Powered Career & Wellness Dashboard" },
-  { src: "/projects/jeevanyaan/img2.png", title: "LangGraph Multi-Agent Reasoning Pipeline" },
-  { src: "/projects/jeevanyaan/img3.png", title: "CatBoost Ensemble Mental Health Predictor" },
-  { src: "/projects/jeevanyaan/img4.png", title: "RAG-Driven Resume Scanner & Match Analyzer" },
-  { src: "/projects/jeevanyaan/img5.png", title: "Map-Reduce Parallel Notes Generation" },
+  { src: "/projects/jeevanyaan/img1.png", title: "Profile Page" },
+  { src: "/projects/jeevanyaan/img2.png", title: "Dashboard Home Page" },
+  { src: "/projects/jeevanyaan/img3.png", title: "Quiz Maker Module" },
+  { src: "/projects/jeevanyaan/img4.png", title: "Notes & Assignments Assistant" },
+  { src: "/projects/jeevanyaan/img5.png", title: "Mental Health Analysis & Support Module" },
 ];
 
 const pychampScreenshots = [
-  { src: "/projects/pychamp/img1.png", title: "PyChamp — AI DSA Learning Platform & Dashboard" },
-  { src: "/projects/pychamp/img2.png", title: "In-Browser Python IDE with Real-Time Execution" },
-  { src: "/projects/pychamp/img3.png", title: "3-Agent LangGraph Concurrent Reasoning Engine" },
-  { src: "/projects/pychamp/img4.png", title: "Intelligent Step-by-Step Code Evaluation" },
-  { src: "/projects/pychamp/img5.png", title: "Progressive DSA Curriculum & Unlock Flow" },
-  { src: "/projects/pychamp/img6.png", title: "Sandboxed Code Execution & Test Runner" },
-  { src: "/projects/pychamp/img7.png", title: "Zero-Token Offline Study Notes & Library" },
+  { src: "/projects/pychamp/img1.png", title: "PyChamp - Login Page" },
+  { src: "/projects/pychamp/img2.png", title: "Home Page" },
+  { src: "/projects/pychamp/img3.png", title: "Python Code Editor" },
+  { src: "/projects/pychamp/img4.png", title: "DSA AI Tutor" },
+  { src: "/projects/pychamp/img5.png", title: "Profile Page" },
+  { src: "/projects/pychamp/img6.png", title: "Zero-Token Offline Study Notes & Library" },
+  { src: "/projects/pychamp/img7.png", title: "API Key setup screen" },
+];
+
+const healthInsuranceScreenshots = [
+  { src: "/projects/health-insurance/img1.png", title: "Home Page" },
+  { src: "/projects/health-insurance/img2.png", title: "Dataset Analysis Page" },
+  { src: "/projects/health-insurance/img3.png", title: "Model training notebook Page" },
+  { src: "/projects/health-insurance/img4.png", title: "Prediction Page" },
+  { src: "/projects/health-insurance/img5.png", title: "Insurance Prediction Results" },
+  { src: "/projects/health-insurance/img6.png", title: "Visualizations Page" },
 ];
 
 export function Projects() {
   const [jeevanyaanGalleryOpen, setJeevanyaanGalleryOpen] = useState(false);
   const [pychampGalleryOpen, setPychampGalleryOpen] = useState(false);
+  const [healthInsuranceGalleryOpen, setHealthInsuranceGalleryOpen] = useState(false);
 
   return (
     <section id="projects" className="space-y-10 scroll-mt-32">
@@ -359,14 +369,26 @@ export function Projects() {
           <CardHeader className="space-y-5 px-8 pt-8 pb-4">
             <div className="flex flex-col sm:flex-row justify-between sm:items-start gap-5">
               <div className="space-y-2">
-                <CardTitle className={`${headingFont} text-3xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors duration-200 flex items-center gap-3`}>
-                  Health Insurance Claim Prediction
-                  <a href="https://github.com/SohamMistry01/Health-Insurance-Claim-Prediction" target="_blank" rel="noreferrer" className="text-muted-foreground/60 hover:text-primary transition-colors" title="View on GitHub">
-                    <GithubIcon className="w-6 h-6" />
-                  </a>
-                  <a href="https://health-insurance-claim-prediction-app.streamlit.app/" target="_blank" rel="noreferrer" className="text-muted-foreground/60 hover:text-primary transition-colors" title="View Live Website">
-                    <ExternalLink className="w-6 h-6" />
-                  </a>
+                <CardTitle className={`${headingFont} text-3xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors duration-200 flex flex-wrap items-center gap-3`}>
+                  <span>Health Insurance Claim Prediction</span>
+                  <div className="flex items-center gap-2">
+                    <a href="https://github.com/SohamMistry01/Health-Insurance-Claim-Prediction" target="_blank" rel="noreferrer" className="text-muted-foreground/60 hover:text-primary transition-colors" title="View on GitHub">
+                      <GithubIcon className="w-6 h-6" />
+                    </a>
+                    <a href="https://health-insurance-claim-prediction-app.streamlit.app/" target="_blank" rel="noreferrer" className="text-muted-foreground/60 hover:text-primary transition-colors" title="View Live Website">
+                      <ExternalLink className="w-6 h-6" />
+                    </a>
+                    <button
+                      type="button"
+                      onClick={() => setHealthInsuranceGalleryOpen(true)}
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-primary bg-primary/10 hover:bg-primary/20 border border-primary/25 hover:border-primary/40 px-3 py-1 rounded-full transition-all hover:scale-105 active:scale-95 cursor-pointer shadow-sm ml-1"
+                      title="View Project Screenshots"
+                    >
+                      <Images className="w-3.5 h-3.5" />
+                      <span>Screenshots</span>
+                      <span className="text-[10px] bg-primary/20 text-primary px-1.5 py-0.2 rounded-full font-semibold">6</span>
+                    </button>
+                  </div>
                 </CardTitle>
                 <CardDescription className="text-lg text-muted-foreground/80">End-to-end ML System &amp; GenAI Analytics</CardDescription>
               </div>
@@ -380,9 +402,26 @@ export function Projects() {
 
           <CardContent className="space-y-6 px-8 pb-8">
             <p className="text-lg text-muted-foreground leading-[1.8] font-light">
-              Built an end-to-end ML system using ensemble regression with <span className="text-foreground/80 font-medium">91% accuracy</span> for cost prediction.
-              Integrated a Gemini-powered medical chatbot and interactive Plotly charts for analytics, reducing manual claim assessment time by <span className="text-foreground/80 font-medium">40%</span> through automation.
+              Built an end-to-end ML system using ensemble regression with <span className="text-foreground/80 font-medium">(91% accuracy)</span> for cost prediction.
+              Integrated a Gemini-powered medical chatbot and interactive Plotly charts for analytics, reducing manual claim assessment time by <span className="text-foreground/80 font-medium">(40%)</span> through automation.
             </p>
+
+            {/* Screenshots trigger banner */}
+            <div className="flex items-center">
+              <button
+                type="button"
+                onClick={() => setHealthInsuranceGalleryOpen(true)}
+                className="group inline-flex items-center gap-2.5 text-sm font-medium text-foreground/90 bg-card/60 hover:bg-card border border-border/60 hover:border-primary/40 px-4 py-2.5 rounded-xl transition-all hover:scale-[1.01] active:scale-[0.99] cursor-pointer shadow-sm"
+              >
+                <div className="p-1 rounded-md bg-primary/10 text-primary border border-primary/20 group-hover:bg-primary/20 transition-colors">
+                  <Images className="w-4 h-4" />
+                </div>
+                <span>View Project Screenshots &amp; Glimpse</span>
+                <span className="text-xs bg-primary/15 text-primary border border-primary/20 px-2 py-0.5 rounded-full font-semibold">
+                  6 Screenshots
+                </span>
+              </button>
+            </div>
 
             <div className="bg-muted/20 rounded-xl px-3 border border-border/30">
               <Accordion className="w-full">
@@ -455,6 +494,14 @@ export function Projects() {
         onClose={() => setPychampGalleryOpen(false)}
         projectName="PyChamp"
         images={pychampScreenshots}
+      />
+
+      {/* Health Insurance Screenshots Modal */}
+      <ProjectGalleryModal
+        isOpen={healthInsuranceGalleryOpen}
+        onClose={() => setHealthInsuranceGalleryOpen(false)}
+        projectName="Health Insurance Claim Prediction"
+        images={healthInsuranceScreenshots}
       />
     </section>
   );
