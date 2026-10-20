@@ -295,11 +295,11 @@ export function ProjectGalleryModal({
                       <p className="text-xs text-white/60">
                         Place your screenshot as{" "}
                         <strong className="text-primary font-medium">
-                          img{currentIndex + 1}.png
+                          {currentImage.src.split("/").pop()}
                         </strong>{" "}
                         in{" "}
                         <span className="font-mono text-white/80">
-                          public/projects/jeevanyaan/
+                          public{currentImage.src.substring(0, currentImage.src.lastIndexOf("/") + 1)}
                         </span>
                       </p>
                     </div>

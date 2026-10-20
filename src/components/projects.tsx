@@ -21,8 +21,19 @@ const jeevanyaanScreenshots = [
   { src: "/projects/jeevanyaan/img5.png", title: "Map-Reduce Parallel Notes Generation" },
 ];
 
+const pychampScreenshots = [
+  { src: "/projects/pychamp/img1.png", title: "PyChamp — AI DSA Learning Platform & Dashboard" },
+  { src: "/projects/pychamp/img2.png", title: "In-Browser Python IDE with Real-Time Execution" },
+  { src: "/projects/pychamp/img3.png", title: "3-Agent LangGraph Concurrent Reasoning Engine" },
+  { src: "/projects/pychamp/img4.png", title: "Intelligent Step-by-Step Code Evaluation" },
+  { src: "/projects/pychamp/img5.png", title: "Progressive DSA Curriculum & Unlock Flow" },
+  { src: "/projects/pychamp/img6.png", title: "Sandboxed Code Execution & Test Runner" },
+  { src: "/projects/pychamp/img7.png", title: "Zero-Token Offline Study Notes & Library" },
+];
+
 export function Projects() {
   const [jeevanyaanGalleryOpen, setJeevanyaanGalleryOpen] = useState(false);
+  const [pychampGalleryOpen, setPychampGalleryOpen] = useState(false);
 
   return (
     <section id="projects" className="space-y-10 scroll-mt-32">
@@ -206,11 +217,23 @@ export function Projects() {
           <CardHeader className="space-y-5 px-8 pt-8 pb-4">
             <div className="flex flex-col sm:flex-row justify-between sm:items-start gap-5">
               <div className="space-y-2">
-                <CardTitle className={`${headingFont} text-3xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors duration-200 flex items-center gap-3`}>
-                  PyChamp
-                  <a href="https://github.com/SohamMistry01/PyChamp" target="_blank" rel="noreferrer" className="text-muted-foreground/60 hover:text-primary transition-colors" title="View on GitHub">
-                    <GithubIcon className="w-6 h-6" />
-                  </a>
+                <CardTitle className={`${headingFont} text-3xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors duration-200 flex flex-wrap items-center gap-3`}>
+                  <span>PyChamp</span>
+                  <div className="flex items-center gap-2">
+                    <a href="https://github.com/SohamMistry01/PyChamp" target="_blank" rel="noreferrer" className="text-muted-foreground/60 hover:text-primary transition-colors" title="View on GitHub">
+                      <GithubIcon className="w-6 h-6" />
+                    </a>
+                    <button
+                      type="button"
+                      onClick={() => setPychampGalleryOpen(true)}
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-primary bg-primary/10 hover:bg-primary/20 border border-primary/25 hover:border-primary/40 px-3 py-1 rounded-full transition-all hover:scale-105 active:scale-95 cursor-pointer shadow-sm ml-1"
+                      title="View Project Screenshots"
+                    >
+                      <Images className="w-3.5 h-3.5" />
+                      <span>Screenshots</span>
+                      <span className="text-[10px] bg-primary/20 text-primary px-1.5 py-0.2 rounded-full font-semibold">7</span>
+                    </button>
+                  </div>
                 </CardTitle>
                 <CardDescription className="text-lg text-muted-foreground/80">AI DSA Learning Platform &amp; In-Browser Python IDE</CardDescription>
               </div>
@@ -228,6 +251,23 @@ export function Projects() {
               Architected an AI-native Data Structures &amp; Algorithms learning platform and integrated browser Python IDE.
               Orchestrated a concurrent <span className="text-foreground/80 font-medium">3-agent LangGraph pipeline</span> powered by Groq&apos;s high-speed LPU inference with a guided progressive unlock flow, paired with a sandboxed code execution engine and zero-token offline study notes library.
             </p>
+
+            {/* Screenshots trigger banner */}
+            <div className="flex items-center">
+              <button
+                type="button"
+                onClick={() => setPychampGalleryOpen(true)}
+                className="group inline-flex items-center gap-2.5 text-sm font-medium text-foreground/90 bg-card/60 hover:bg-card border border-border/60 hover:border-primary/40 px-4 py-2.5 rounded-xl transition-all hover:scale-[1.01] active:scale-[0.99] cursor-pointer shadow-sm"
+              >
+                <div className="p-1 rounded-md bg-primary/10 text-primary border border-primary/20 group-hover:bg-primary/20 transition-colors">
+                  <Images className="w-4 h-4" />
+                </div>
+                <span>View Project Screenshots &amp; Glimpse</span>
+                <span className="text-xs bg-primary/15 text-primary border border-primary/20 px-2 py-0.5 rounded-full font-semibold">
+                  7 Screenshots
+                </span>
+              </button>
+            </div>
 
             <div className="bg-muted/20 rounded-xl px-3 border border-border/30">
               <Accordion className="w-full">
@@ -407,6 +447,14 @@ export function Projects() {
         onClose={() => setJeevanyaanGalleryOpen(false)}
         projectName="JeevanYaan"
         images={jeevanyaanScreenshots}
+      />
+
+      {/* PyChamp Screenshots Modal */}
+      <ProjectGalleryModal
+        isOpen={pychampGalleryOpen}
+        onClose={() => setPychampGalleryOpen(false)}
+        projectName="PyChamp"
+        images={pychampScreenshots}
       />
     </section>
   );
