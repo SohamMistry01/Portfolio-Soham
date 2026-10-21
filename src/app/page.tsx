@@ -181,7 +181,7 @@ export default function Portfolio() {
                   Founding Software &amp; AI Engineer
                 </h4>
                 <span className="text-sm font-medium text-primary bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full w-fit shrink-0">
-                  Aug 2025 – Present
+                  Aug 2025 - Present
                 </span>
               </div>
               {/* Company */}
@@ -193,10 +193,11 @@ export default function Portfolio() {
               {/* Bullets */}
               <ul className="space-y-4 text-lg text-muted-foreground leading-[1.8] font-light">
                 {[
-                  "Architected and built the startup's flagship student-facing web platform from scratch using Django, supporting onboarding of 150+ early users.",
-                  "Engineered 10+ FastAPI microservices, integrating RAG pipelines, ML workflows, and operational APIs — automating business processes and reducing internal manual workload by 50%.",
-                  "Led end-to-end mobile development and published the live Android app on the Google Play Store using Flutter and WebView.",
-                  "Managed database operations, full-stack UI workflows, live bug fixes, and deployment infrastructure using Docker and CI testing.",
+                  "Architected and built the startup's flagship web platform from scratch using Django for 150+ early users, implementing granular Role-Based Access Control (RBAC) across mentors, demo/paid students, parents, content team, management, and superusers.",
+                  "Engineered 10+ FastAPI microservices secured with Bearer token authentication (BearerAuth), integrating RAG pipelines and ML workflows that automated business processes and reduced internal manual workload by 50%.",
+                  "Implemented automated cron jobs and background task schedulers to handle periodic third-party API polling and synchronize live records at fixed time intervals.",
+                  "Maintained 99.95% production uptime by incorporating comprehensive error-handling mechanisms, managing database operations, and deploying containerized services via Docker and CI testing.",
+                  "Led end-to-end mobile development and published the live Android app on the Google Play Store using Flutter and WebView, managing live releases and continuous bug fixes.",
                 ].map((point, i) => (
                   <li key={i} className="relative before:content-[''] before:absolute before:-left-6 before:top-3.5 before:w-1.5 before:h-1.5 before:bg-primary/60 before:rounded-full">
                     {point}
