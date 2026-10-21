@@ -3,7 +3,21 @@
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Cpu, Blocks, ArrowRight, FileText, GraduationCap, Users, Terminal } from "lucide-react";
+import {
+  Mail,
+  Cpu,
+  Blocks,
+  ArrowRight,
+  FileText,
+  GraduationCap,
+  Users,
+  Terminal,
+  Activity,
+  Zap,
+  ShieldCheck,
+  Smartphone,
+  Clock,
+} from "lucide-react";
 import { Projects } from "@/components/projects";
 
 const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -190,19 +204,97 @@ export default function Portfolio() {
                 <span className="w-1 h-1 bg-muted-foreground rounded-full"></span>
                 <span className="text-muted-foreground font-normal">Mumbai (Remote)</span>
               </p>
+              {/* Quick Impact Metrics Ribbon */}
+              <div className="flex flex-wrap gap-2 pt-1 pb-1">
+                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-medium text-primary shadow-sm">
+                  <Activity className="w-3.5 h-3.5" />
+                  <span>99.95% Live Uptime</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-medium text-primary shadow-sm">
+                  <Zap className="w-3.5 h-3.5" />
+                  <span>50% Workload Automated</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-card/60 border border-border/50 text-xs font-medium text-foreground/85 shadow-sm">
+                  <ShieldCheck className="w-3.5 h-3.5 text-primary" />
+                  <span>6-Tier RBAC &amp; BearerAuth</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-card/60 border border-border/50 text-xs font-medium text-foreground/85 shadow-sm">
+                  <Users className="w-3.5 h-3.5 text-primary" />
+                  <span>150+ Onboarded Users</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-card/60 border border-border/50 text-xs font-medium text-foreground/85 shadow-sm">
+                  <Smartphone className="w-3.5 h-3.5 text-primary" />
+                  <span>Google Play Store</span>
+                </div>
+              </div>
+
               {/* Bullets */}
-              <ul className="space-y-4 text-lg text-muted-foreground leading-[1.8] font-light">
+              <ul className="space-y-3 pt-2">
                 {[
-                  "Architected and built the startup's flagship web platform from scratch using Django for 150+ early users, implementing granular Role-Based Access Control (RBAC) across mentors, demo/paid students, parents, content team, management, and superusers.",
-                  "Engineered 10+ FastAPI microservices secured with Bearer token authentication (BearerAuth), integrating RAG pipelines and ML workflows that automated business processes and reduced internal manual workload by 50%.",
-                  "Implemented automated cron jobs and background task schedulers to handle periodic third-party API polling and synchronize live records at fixed time intervals.",
-                  "Maintained 99.95% production uptime by incorporating comprehensive error-handling mechanisms, managing database operations, and deploying containerized services via Docker and CI testing.",
-                  "Led end-to-end mobile development and published the live Android app on the Google Play Store using Flutter and WebView, managing live releases and continuous bug fixes.",
-                ].map((point, i) => (
-                  <li key={i} className="relative before:content-[''] before:absolute before:-left-6 before:top-3.5 before:w-1.5 before:h-1.5 before:bg-primary/60 before:rounded-full">
-                    {point}
-                  </li>
-                ))}
+                  {
+                    icon: ShieldCheck,
+                    title: "Platform & RBAC Architecture",
+                    content: (
+                      <>
+                        Architected and launched the startup&apos;s flagship web platform from scratch using <strong className="text-foreground font-semibold">Django</strong> for <strong className="text-foreground font-semibold">150+ early users</strong>, implementing granular <strong className="text-foreground font-semibold">Role-Based Access Control (RBAC)</strong> across <span className="text-foreground/90 font-medium">6 user tiers</span> (mentors, demo/paid students, parents, content team, management, and superusers).
+                      </>
+                    ),
+                  },
+                  {
+                    icon: Cpu,
+                    title: "FastAPI Microservices & AI Workflows",
+                    content: (
+                      <>
+                        Engineered <strong className="text-foreground font-semibold">10+ FastAPI microservices</strong> secured with <span className="text-foreground/90 font-medium">Bearer token authentication (BearerAuth)</span>, integrating <span className="text-primary font-medium">RAG pipelines</span> and ML workflows that automated operational processes and reduced internal manual workload by <strong className="text-primary font-semibold">50%</strong>.
+                      </>
+                    ),
+                  },
+                  {
+                    icon: Clock,
+                    title: "Automated Cron Schedulers & Data Pipelines",
+                    content: (
+                      <>
+                        Implemented robust <strong className="text-foreground font-semibold">automated cron jobs</strong> and background worker routines to handle scheduled third-party API polling and synchronize live records at fixed time intervals with zero manual intervention.
+                      </>
+                    ),
+                  },
+                  {
+                    icon: Activity,
+                    title: "System Reliability & High Availability",
+                    content: (
+                      <>
+                        Maintained <strong className="text-primary font-semibold">99.95% production uptime</strong> by incorporating comprehensive error-handling mechanisms, managing database operations, and orchestrating deployment infrastructure via <span className="text-foreground/90 font-medium">Docker</span> and automated <span className="text-foreground/90 font-medium">CI testing</span>.
+                      </>
+                    ),
+                  },
+                  {
+                    icon: Smartphone,
+                    title: "Mobile App & Play Store Release",
+                    content: (
+                      <>
+                        Led end-to-end mobile engineering and published the live Android app on the <strong className="text-foreground font-semibold">Google Play Store</strong> using <span className="text-foreground/90 font-medium">Flutter</span> and WebView, orchestrating live production releases and continuous bug fixes.
+                      </>
+                    ),
+                  },
+                ].map((item, i) => {
+                  const Icon = item.icon;
+                  return (
+                    <li
+                      key={i}
+                      className="group/item flex items-start gap-3.5 p-3.5 -ml-3 rounded-xl border border-transparent hover:border-border/40 hover:bg-card/40 transition-all duration-200"
+                    >
+                      <div className="p-2 rounded-lg bg-primary/10 text-primary border border-primary/20 shrink-0 mt-0.5 group-hover/item:bg-primary/20 transition-colors shadow-sm">
+                        <Icon className="w-4 h-4" />
+                      </div>
+                      <div className="space-y-1 text-base text-muted-foreground leading-[1.75] font-light">
+                        <span className="block font-medium text-foreground text-base tracking-tight">
+                          {item.title}
+                        </span>
+                        <p>{item.content}</p>
+                      </div>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
