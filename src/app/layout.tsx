@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   title: "Soham Mistry - AI/ML Engineer",
   description:
     "Portfolio of Soham Mistry, AI/ML Engineer and GenAI Systems Builder. Specialising in agentic RAG pipelines, LLMs, and full-stack AI platforms.",
+  verification: {
+    google: "iFBOaEwomz8SIRAnl19P1DIL8rarXDXleDVsEXBpjsE",
+  },
 };
 
 export default function RootLayout({
