@@ -28,6 +28,26 @@ export const metadata: Metadata = {
   title: "Soham Mistry - AI/ML Engineer",
   description:
     "Portfolio of Soham Mistry, AI/ML Engineer and GenAI Systems Builder. Specialising in agentic RAG pipelines, LLMs, and full-stack AI platforms.",
+  applicationName: "Soham Mistry",
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png", sizes: "192x192" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  openGraph: {
+    title: "Soham Mistry - AI/ML Engineer",
+    description:
+      "Portfolio of Soham Mistry, AI/ML Engineer and GenAI Systems Builder. Specialising in agentic RAG pipelines, LLMs, and full-stack AI platforms.",
+    url: "https://soham-mistry.vercel.app",
+    siteName: "Soham Mistry",
+    locale: "en_US",
+    type: "website",
+  },
   verification: {
     google: "iFBOaEwomz8SIRAnl19P1DIL8rarXDXleDVsEXBpjsE",
   },
